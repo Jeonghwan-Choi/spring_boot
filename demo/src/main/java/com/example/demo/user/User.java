@@ -5,15 +5,15 @@ import java.util.Date;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-@Data
-@AllArgsConstructor
-public class user {
+public class User {
+
 	private Integer id;
 	private String name;
 	private Date joinDate;
-	
-	public user(int i, String string, Date date) {
-		// TODO Auto-generated constructor stub
+	public User(int id, String name, Date joinDate) {
+		this.id = id;
+		this.name = name;
+		this.joinDate =joinDate;
 	}
 	public Integer getId() {
 		return id;
@@ -34,5 +34,11 @@ public class user {
 		this.joinDate = joinDate;
 	}
 	
+	
+
+	
+	
+	
 }
 
+	

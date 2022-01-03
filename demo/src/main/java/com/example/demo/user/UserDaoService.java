@@ -4,22 +4,26 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class UserDaoService {
-	private static List<user> users = new ArrayList<>();
+	private static List<User> users = new ArrayList<>();
 	
 	private static int userCount = 3;
 	
 	static {
-		users.add(new user(1, "Kenneth", new Date()));
-		users.add(new user(2, "Alice", new Date()));
-		users.add(new user(3, "Elena", new Date()));
+		users.add(new User(1, "Karena", new Date()));
+		users.add(new User(2, "Alice", new Date()));
+		users.add(new User(3, "Foull", new Date()));
+
 	}
 	
-	public List<user> findAll(){
+	public List<User> findAll(){
 		return users;
 	}
 	
-	public user save(user user) {
+	public User save(User user) {
 		if(user.getId() == null) {
 			user.setId(++userCount);
 		}
@@ -27,9 +31,9 @@ public class UserDaoService {
 		return user;
 	}
 	
-	public user findOne(int id) {
+	public User findOne(int id) {
 		
-		for (user user: users) {
+		for (User user: users) {
 			if(user.getId() == id) {
 				return user;
 			}
